@@ -1,0 +1,26 @@
+<div class="container">
+    <h3 class="text-center">Danh sách đọc</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let book of books">
+        <tr>
+            <td>{{book.name}}</td>
+            <td>
+                <button (click)="read(book.id)" [disabled]="book.read" >Đã đọc</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <form [formGroup]="bookForm" (ngSubmit)="add()">
+        <label>
+            <input type="text" formControlName="name">
+        </label>
+        <button type="submit">Thêm</button>
+    </form>
+
+</div>

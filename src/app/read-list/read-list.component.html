@@ -1,0 +1,19 @@
+<div class="container">
+  <h3 class="text-center">Danh sách đã đọc</h3>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let book of books">
+    <tr>
+      <td>{{book.name}}</td>
+      <td>
+        <button (click)="readAgain(book.id)" [disabled]="!book.read">Đọc lại</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
